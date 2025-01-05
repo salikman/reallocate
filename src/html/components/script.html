@@ -1,0 +1,75 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/main.min.js" defer></script>
+
+<script>
+  // swiper
+  var swiper = new Swiper(".projectsSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      475: {
+        slidesPerView: 2,
+      },
+      767: {
+        slidesPerView: 3,
+      },
+    },
+  });
+
+  var swiper = new Swiper(".partnersSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".slider-navigation .button-next",
+      prevEl: ".slider-navigation .button-prev",
+    },
+    breakpoints: {
+      475: {
+        slidesPerView: 2,
+      },
+      767: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 5,
+      },
+    },
+  });
+
+  var swiper = new Swiper(".clientsSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      475: {
+        slidesPerView: 2,
+      },
+      767: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+    },
+  });
+
+</script>

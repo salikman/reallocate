@@ -1,0 +1,245 @@
+@import "../config/functions";
+@import "../config/mixins";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+	z-index: 50;
+	inline-size: 100%;
+	transition: all var(--bs-transition);
+
+  .header-is-sticky & {
+    position: fixed;
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 90%);
+  }
+
+  &_wrapper {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 40px;
+
+    @include media-mx(991) {
+      padding: 20px 0 30px;
+    }
+  }
+
+  &_inner {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 20;
+
+    img {
+      width: 86px;
+      height: 82px;
+      object-fit: cover;
+
+      @include media-mx(1220) {
+        width: 40px;
+        height: auto;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    gap: 45px;
+    margin-top: 7px;
+    margin-left: auto;
+
+    @include media-mx(1220) {
+      gap: 30px;
+    }
+    @include media-mx(991) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      background: rgba(black, .4) linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+      transition: all .3s ease;
+      translate: 0 -100%;
+      opacity: 0;
+      visibility: hidden;
+
+      .menu-open & {
+        translate: 0 0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    a {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+
+      @include media-mx(991) {
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__phone {
+    display: flex;
+    gap: 10px;
+    margin-top: 7px;
+    margin-left: 130px;
+
+    @include media-mx(1220) {
+      margin-left: 60px;
+    }
+
+    img {
+      width: 17px;
+      height: 17px;
+      object-fit: cover;
+    }
+
+    span {
+      color: var(--primary-color);
+      font-weight: 900;
+
+      @include media-mx(991) {
+        display: none;
+      }
+    }
+  }
+
+  &__lang {
+    position: relative;
+    margin-left: 60px;
+
+    @include media-mx(991) {
+      margin-left: 30px;
+    }
+  
+    &:hover .lang-dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .lang-current {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+  
+      img {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      i {
+        width: 11px;
+        height: 11px;
+        background: url('../images/icon-chevron-down.svg') no-repeat center / contain;
+      }
+    }
+  
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(21, 5, 89, .1);
+      transition: all .3s ease;
+  
+      opacity: 0;
+      visibility: hidden;
+      transition: all .3s ease;
+  
+      a {
+        display: flex;
+        width: max-content;
+        padding: 10px;
+        border-radius: 8px;
+  
+        &:hover {
+          background: rgba(242, 241, 254, 1);
+          color: var(--primary-color);
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+// Burger
+.icon-menu {
+  display: none;
+
+  @include media-mx(991) {
+    display: block;
+    position: relative;
+    z-index: 20;
+    width: rem(30);
+    height: rem(18);
+    margin-left: 30px;
+    cursor: pointer;
+
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 300ms ease 0ms;
+      right: 0;
+      position: absolute;
+      width: 100%;
+      height: rem(2);
+      background-color: white;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      top: calc(50% - rem(1));
+    }
+
+    .menu-open & {
+      span {
+        width: 0;
+      }
+
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+        // background: black;
+      }
+
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+        // background: black;
+      }
+    }
+  }
+}
