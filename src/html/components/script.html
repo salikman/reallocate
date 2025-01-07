@@ -72,4 +72,68 @@
     },
   });
 
+  var swiper = new Swiper(".projectSwiper", {
+    spaceBetween: 20,
+    slidesPerView: 2,
+    freeMode: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
+  var swiper2 = new Swiper(".projectSwiper2", {
+    spaceBetween: 10,
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+</script>
+<script>
+    // Отримуємо необхідні елементи
+    const calendarItems = document.querySelectorAll('.calendar > div');
+    const prevButton = document.querySelector('.calendar__navigation .prev');
+    const nextButton = document.querySelector('.calendar__navigation .next');
+
+    let currentIndex = 0; // Поточний індекс активного дня
+
+    // Функція для оновлення активного дня
+    function updateActiveDay(index) {
+    calendarItems.forEach((item, i) => {
+      if (i === index) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+
+  // Початкове встановлення активного дня
+  updateActiveDay(currentIndex);
+
+  // Обробка кліку на кнопку "Назад"
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + calendarItems.length) % calendarItems.length;
+    updateActiveDay(currentIndex);
+  });
+
+  // Обробка кліку на кнопку "Вперед"
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % calendarItems.length;
+    updateActiveDay(currentIndex);
+  });
+
+  // Додатково: підтримка клавіш стрілок
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + calendarItems.length) % calendarItems.length;
+      updateActiveDay(currentIndex);
+    } else if (event.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % calendarItems.length;
+      updateActiveDay(currentIndex);
+    }
+  });
 </script>

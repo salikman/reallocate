@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Главная</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250105174026" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250107154046" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250105174026">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250107154046">
 </head>
 
   <body>
@@ -689,8 +689,8 @@
 </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250105174026" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/main.min.js?_v=20250105174026" defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250107154046" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/main.min.js?_v=20250107154046" defer="defer"></script>
 
 <script>
   // swiper
@@ -763,6 +763,70 @@
     },
   });
 
+  var swiper = new Swiper(".projectSwiper", {
+    spaceBetween: 20,
+    slidesPerView: 2,
+    freeMode: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
+  });
+  var swiper2 = new Swiper(".projectSwiper2", {
+    spaceBetween: 10,
+    thumbs: {
+      swiper: swiper,
+    },
+  });
+</script>
+<script>
+    // Отримуємо необхідні елементи
+    const calendarItems = document.querySelectorAll('.calendar > div');
+    const prevButton = document.querySelector('.calendar__navigation .prev');
+    const nextButton = document.querySelector('.calendar__navigation .next');
+
+    let currentIndex = 0; // Поточний індекс активного дня
+
+    // Функція для оновлення активного дня
+    function updateActiveDay(index) {
+    calendarItems.forEach((item, i) => {
+      if (i === index) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active');
+      }
+    });
+  }
+
+  // Початкове встановлення активного дня
+  updateActiveDay(currentIndex);
+
+  // Обробка кліку на кнопку "Назад"
+  prevButton.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + calendarItems.length) % calendarItems.length;
+    updateActiveDay(currentIndex);
+  });
+
+  // Обробка кліку на кнопку "Вперед"
+  nextButton.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % calendarItems.length;
+    updateActiveDay(currentIndex);
+  });
+
+  // Додатково: підтримка клавіш стрілок
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + calendarItems.length) % calendarItems.length;
+      updateActiveDay(currentIndex);
+    } else if (event.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % calendarItems.length;
+      updateActiveDay(currentIndex);
+    }
+  });
 </script>
   </body>
 </html>

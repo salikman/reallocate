@@ -1,0 +1,19 @@
+.location {
+  padding-block: 50px;
+
+  @include media-mx(991) {
+    padding-block: 25px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-family: FreightDispProBlack, sans-serif;
+    @include adaptiv-font(40,30);
+  }
+
+  &__map {
+    height: 450px;
+    border-radius: 25px;
+    overflow: hidden;
+  }
+}
