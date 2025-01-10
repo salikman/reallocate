@@ -89,6 +89,10 @@
         font-weight: 700;
         text-transform: uppercase;
       }
+
+      &:hover {
+        color: var(--primary-color);
+      }
     }
   }
 

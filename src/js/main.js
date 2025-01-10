@@ -6,8 +6,8 @@
 
  * Если мы хотим добавить модуль следует его раскомментировать
  */
-// import { MousePRLX } from './libs/parallaxMouse'
-// import AOS from 'aos'
+import { MousePRLX } from './libs/parallax-mouse'
+import AOS from 'aos'
 // import Swiper, { Navigation, Pagination } from 'swiper';
 
 import { BaseHelpers } from './helpers/base-helpers';
@@ -46,12 +46,12 @@ new BurgerMenu().init();
  *  Библиотека для анимаций
  *  документация: https://michalsnik.github.io/aos
  * */
-// AOS.init();
+AOS.init();
 
 /**
  * Параллакс мышей
  * */
-// new MousePRLX();
+new MousePRLX();
 
 new Tabs('tabs-example', {
 	onChange: (data) => {

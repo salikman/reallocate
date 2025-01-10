@@ -129,11 +129,20 @@
     gap: 30px;
 
     &__img {
+      border-radius: 25px;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          scale: 1.05;
+        }
+      }
+
       img {
         width: 100%;
-        border-radius: 25px;
         aspect-ratio: 10/12;
         object-fit: cover;
+        transition: all .3s ease;
       }
     }
 
