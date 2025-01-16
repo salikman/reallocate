@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Project</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250112112628" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250116180553" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250112112628">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250116180553">
 </head>
 
   <body>
@@ -554,8 +554,8 @@
 </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250112112628" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/main.min.js?_v=20250112112628"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250116180553" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/main.min.js?_v=20250116180553"></script>
 
 <script>
   // swiper
@@ -604,6 +604,30 @@
     },
   });
 
+  var swiper = new Swiper(".countrySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".slider-navigation .button-next",
+      prevEl: ".slider-navigation .button-prev",
+    },
+    breakpoints: {
+      475: {
+        slidesPerView: 2,
+      },
+      767: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+    },
+  });
+
   var swiper = new Swiper(".clientsSwiper", {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -648,6 +672,38 @@
     },
   });
 </script>
+
+
+<script>
+  // Отримуємо елементи з DOM
+  const toggleFilterButton = document.querySelector('.toggle-filter');
+  const filterCloseButton = document.querySelector('.filter__close');
+  const filterElement = document.querySelector('.filter_wrapper');
+
+  // Додаємо класи filter-open та lock до body та html по кліку на toggle-filter
+  toggleFilterButton.addEventListener('click', () => {
+      document.body.classList.add('filter-open');
+      document.documentElement.classList.add('lock');
+  });
+
+  // Видаляємо класи filter-open та lock з body та html по кліку на filter__close
+  filterCloseButton.addEventListener('click', () => {
+      document.body.classList.remove('filter-open');
+      document.documentElement.classList.remove('lock');
+  });
+
+  // Видаляємо класи filter-open та lock при кліку поза областю фільтра
+  document.addEventListener('click', (event) => {
+      const isClickInsideFilter = filterElement.contains(event.target);
+      const isClickOnToggle = toggleFilterButton.contains(event.target);
+
+      if (!isClickInsideFilter && !isClickOnToggle) {
+          document.body.classList.remove('filter-open');
+          document.documentElement.classList.remove('lock');
+      }
+  });
+</script>
+
 <script>
     // Отримуємо необхідні елементи
     const calendarItems = document.querySelectorAll('.calendar > div');

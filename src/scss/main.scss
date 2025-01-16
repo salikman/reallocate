@@ -50,6 +50,9 @@
 @import "components/tabs";
 @import "components/accordion";
 @import "components/footer";
+@import "components/filter";
+@import "components/page-title";
+@import "components/pagination";
 
 @import "sections/intro";
 @import "sections/services";
@@ -61,3 +64,7 @@
 @import "sections/project";
 @import "sections/location";
 @import "sections/contacts";
+@import "sections/projects-page";
+@import "sections/country";
+@import "sections/projects-header";
+@import "sections/faq";

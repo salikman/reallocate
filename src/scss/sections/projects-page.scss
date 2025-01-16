@@ -1,0 +1,164 @@
+.projects-page {
+  padding-bottom: 100px;
+  
+  &_header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    height: 360px;
+    margin-bottom: 30px;
+    background: url("../images/project-1.jpg") no-repeat center / cover;
+    border-radius: 25px;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 124.86%);
+    }
+  }
+
+  &__title {
+    position: relative;
+    color: white;
+    text-align: center;
+    @include adaptiv-font(50,30);
+    font-family: var(--ff-fdb);
+  }
+
+  &__select {
+    position: relative;
+    display: flex;
+    width: max-content;
+    margin-inline: auto;
+    padding: 3px;
+    background: white;
+    border-radius: 50px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+
+      &.active {
+        background: var(--primary-color);
+        color: white;
+      }
+    }
+  }
+  
+  .content_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+
+  .toggle-filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 162px;
+    padding: 10px;
+    background: #000;
+    border-radius: 50px;
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: cover;
+    }
+
+    span {
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  .content__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    row-gap: 50px;
+
+    @include media-mx(475) {
+      grid-template-columns: 100%;
+      gap: 30px;
+    }
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__img {
+      border-radius: 25px;
+      overflow: hidden;
+
+      &:hover {
+        img {
+          scale: 1.05;
+        }
+      }
+
+      img {
+        width: 100%;
+        aspect-ratio: 10/12;
+        object-fit: cover;
+        transition: all .3s ease;
+      }
+    }
+
+    &__meta {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__price {
+      @include adaptiv-font(27,23);
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    &__title {
+      @include adaptiv-font(20,16);
+      font-weight: 500;
+    }
+
+    &__address {
+      color: rgba(128, 128, 128, 1);
+    }
+
+    &__apartments {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      row-gap: 15px;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

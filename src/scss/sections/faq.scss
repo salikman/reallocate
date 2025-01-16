@@ -1,0 +1,17 @@
+.faq {
+  padding-bottom: 50px;
+
+  .accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1110px;
+    width: 100%;
+    margin-inline: auto;
+
+    &__item {
+      border: 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
+  }
+}
