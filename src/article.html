@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/components/head.html', {
+    'title': 'Article'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/components/header.html')
+
+      <main class="page">
+        <div data-observ></div>
+
+        @@include('html/components/page-title.html', {
+          title: "Nový stavební zákon: Revoluce v získávání povolení a zrychlení stavebního procesu"
+        })
+
+        @@include('html/sections/article.html')
+        @@include('html/sections/blog-1.html')
+      </main>
+
+      @@include('html/components/footer.html')
+    </div>
+
+    @@include('html/components/script.html')
+  </body>
+</html>
