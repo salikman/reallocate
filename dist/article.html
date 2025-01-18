@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Article</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250116183115" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css?_v=20250118124322">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250118124322" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250116183115">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250118124322">
 </head>
 
   <body>
@@ -205,8 +206,9 @@
 </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250116183115" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/main.min.js?_v=20250116183115"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js?_v=20250118124322"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250118124322" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/main.min.js?_v=20250118124322"></script>
 
 <script>
   // swiper
@@ -352,6 +354,47 @@
           document.body.classList.remove('filter-open');
           document.documentElement.classList.remove('lock');
       }
+  });
+
+
+  const slider1 = document.getElementById('slider1');
+  const minValue1 = document.getElementById('minValue1');
+  const maxValue1 = document.getElementById('maxValue1');
+
+  noUiSlider.create(slider1, {
+    start: [500, 10000],
+    connect: true,
+    range: {
+      'min': 500,
+      'max': 10000
+    },
+    step: 500,
+    tooltips: false
+  });
+
+  slider1.noUiSlider.on('update', (values) => {
+    minValue1.textContent = `< ${Math.round(values[0])} Sq.Ft.`;
+    maxValue1.textContent = `${Math.round(values[1])}+ Sq.Ft.`;
+  });
+
+  const slider2 = document.getElementById('slider2');
+  const minValue2 = document.getElementById('minValue2');
+  const maxValue2 = document.getElementById('maxValue2');
+
+  noUiSlider.create(slider2, {
+    start: [500, 10000],
+    connect: true,
+    range: {
+      'min': 500,
+      'max': 10000
+    },
+    step: 500,
+    tooltips: false
+  });
+
+  slider2.noUiSlider.on('update', (values) => {
+    minValue2.textContent = `< ${Math.round(values[0])} Sq.Ft.`;
+    maxValue2.textContent = `${Math.round(values[1])}+ Sq.Ft.`;
   });
 </script>
 

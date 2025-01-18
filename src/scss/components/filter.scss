@@ -101,6 +101,13 @@
     }
   }
 
+  &__range {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+
   &_box {
     margin-bottom: 40px;
 
@@ -209,6 +216,54 @@
       span {
         color: #000;
       }
+    }
+  }
+
+  #slider1, #slider2 {
+    padding: 0 16px;
+  }
+  .noUi-horizontal {
+    height: 3px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .noUi-connect {
+    background: var(--primary-color);
+  }
+
+  .noUi-target {
+    border-radius: 0;
+  }
+
+  .range-values {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .noUi-handle {
+    top: -19px;
+    width: 39px;
+    height: 39px;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    cursor: pointer;
+
+    &:before {
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 28px;
+      height: 14px;
+      background: url("../images/arrows.svg") no-repeat center / cover;
+    }
+    &:after {
+      display: none;
     }
   }
 }
