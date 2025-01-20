@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/components/head.html', {
+    'title': 'Consultations'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/components/header.html')
+
+      <main class="page">
+        <div data-observ></div>
+
+        @@include('html/components/page-title-2.html', {
+          css: "h530 cons",
+          title: "Professional real estate consultations",
+          desc: "We can help you find the perfect solution for your needs"
+        })
+        @@include('html/sections/works.html', {
+          css: "works__grid"
+        })
+        @@include('html/sections/clients.html')
+        @@include('html/sections/default-text.html')
+        @@include('html/sections/contacts.html')
+      </main>
+
+      @@include('html/components/footer.html')
+    </div>
+
+    @@include('html/components/filter.html')
+    @@include('html/components/script.html')
+  </body>
+</html>

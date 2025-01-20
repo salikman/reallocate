@@ -1,0 +1,42 @@
+.addressing {
+  padding-block: 50px;
+
+  @include media-mx(991) {
+    padding-block: 25px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-family: FreightDispProBlack, sans-serif;
+    @include adaptiv-font(40,30);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 20px;
+
+    @include media-mx(475) {
+      grid-template-columns: 100%;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+      img {
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        border-radius: 25px;
+      }
+
+      p {
+        color: var(--primary-color);
+        @include adaptiv-font(22,18);
+        font-weight: 700;
+      }
+    }
+  }
+}
