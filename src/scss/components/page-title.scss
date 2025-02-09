@@ -60,4 +60,19 @@
     @include adaptiv-font(22,18);
     font-weight: 600;
   }
+
+  &__location {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    p {
+      color: var(--primary-color);
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+  }
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/components/head.html', {
+    'title': 'Feedback'
+  })
+  <body>
+    <div class="wrapper">
+      @@include('html/components/header.html')
+
+      <main class="page">
+        <div data-observ></div>
+
+        @@include('html/components/page-title-3.html', {
+          title: "Apartments for sale, Prague 10 - Vršovice"
+        })
+
+        @@include('html/sections/portfolio-open.html')
+        @@include('html/sections/location.html')
+      </main>
+
+      @@include('html/components/footer.html')
+    </div>
+
+    @@include('html/components/filter.html')
+    @@include('html/components/script.html')
+  </body>
+</html>

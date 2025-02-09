@@ -77,14 +77,14 @@ input::-ms-clear {
 	display: none;
 }
 
-input[type="number"] {
-	appearance: textfield;
+// input[type="number"] {
+// 	appearance: textfield;
 
-	&::-webkit-outer-spin-button,
-	&::-webkit-inner-spin-button {
-		appearance: none;
-	}
-}
+// 	&::-webkit-outer-spin-button,
+// 	&::-webkit-inner-spin-button {
+// 		appearance: none;
+// 	}
+// }
 
 button {
 	cursor: pointer;

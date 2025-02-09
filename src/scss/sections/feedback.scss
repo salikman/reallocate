@@ -84,8 +84,15 @@
       }
 
       &__input {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
         width: 100%;
+
+        p {
+          color: #777;
+          font-size: 14px;
+        }
 
         input {
           width: 100%;
@@ -94,6 +101,10 @@
           border-radius: 10px;
           padding-inline: 20px;
           font-size: 14px;
+
+          &::placeholder {
+            color: #777;
+          }
         }
       }
 

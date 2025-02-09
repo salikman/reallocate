@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Services</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css?_v=20250209133914">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250209133914" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css?_v=20250209185955">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css?_v=20250209185955" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250209133914">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250209185955">
 </head>
 
   <body>
@@ -500,9 +500,9 @@
     </div>
   </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js?_v=20250209133914"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250209133914" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="js/main.min.js?_v=20250209133914"></script>
+    <script src="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.js?_v=20250209185955"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js?_v=20250209185955" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/main.min.js?_v=20250209185955"></script>
 
 <script>
   // swiper
@@ -616,6 +616,15 @@
     spaceBetween: 10,
     thumbs: {
       swiper: swiper,
+    },
+  });
+
+  var swiper = new Swiper(".portfolioSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
     },
   });
 </script>
